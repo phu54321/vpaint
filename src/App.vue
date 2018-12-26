@@ -1,20 +1,21 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+<template lang='pug'>
+#app
+  v-paint.main-paint(v-model='url')
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import { Component, Vue } from 'vue-property-decorator'
+import VPaint from './components/VPaint.vue'
 
 @Component({
   components: {
-    HelloWorld,
-  },
+    VPaint
+  }
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  url = require('@/assets/test.png')
+}
+
 </script>
 
 <style lang="scss">
@@ -25,5 +26,10 @@ export default class App extends Vue {}
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+
+  .main-paint {
+    width: 800px;
+    height: 600px;
+  }
 }
 </style>

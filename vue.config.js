@@ -1,7 +1,10 @@
 module.exports = {
   pluginOptions: {
     karma: {
-      karmaConfig: require('./karma.conf.js')
+      karmaConfig: {
+        colors: true,
+        browsers: ['ChromeHeadless']
+      }
     }
   }
 }
